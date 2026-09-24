@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth bg-[#0A0A0B] text-[#FAFAFA]" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Esteban Mercado Rachath — Backend Developer &amp; Data</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Space Grotesk, Syne & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#EF4444',
+              orangeDark: '#DC2626',
+              accent: '#38bdf8',
+              cyan: '#EF4444',
+              mint: '#F87171',
+              dark: '#0A0A0B',
+              surface: '#121214',
+              border: '#27272A',
+              borderLight: '#3F3F46',
+              textMuted: '#A1A1AA',
+            }
+          },
+          fontFamily: {
+            sans: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            display: ['Syne', 'Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Typography & Global Layout Styles -->
+<style data-purpose="typography">
+    ::selection {
+      background-color: #EF4444;
+      color: #FFFFFF;
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+<!-- Animations & Micro-Interactions -->
+<style data-purpose="animations">
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 24s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-[#D4D4D8] font-sans antialiased selection:bg-[#EF4444] selection:text-[#FFFFFF] overflow-x-hidden">
+<!-- BEGIN: TopHeader -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#0A0A0B]/90 backdrop-blur-md border-b border-[#27272A]">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between text-xs font-mono tracking-wider">
+<!-- Brand Ident -->
+<a class="flex items-center gap-2 hover:text-[#EF4444] transition-colors duration-200" href="#hero">
+<span class="inline-block w-2 h-2 bg-[#EF4444]"></span>
+<span class="font-bold tracking-widest text-[#FAFAFA]">ESTEBAN MERCADO<span class="text-[#EF4444]">.DEV</span></span>
+</a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-6 text-[#A1A1AA]">
+<a class="hover:text-[#FAFAFA] transition-colors duration-150" href="#sobre-mi">[SOBRE_MÍ]</a>
+<a class="hover:text-[#FAFAFA] transition-colors duration-150" href="#proyectos">[PROYECTOS]</a>
+<a class="hover:text-[#FAFAFA] transition-colors duration-150" href="#stack">[STACK]</a>
+<a class="hover:text-[#FAFAFA] transition-colors duration-150" href="#educacion">[EDUCACIÓN]</a>
+<a class="hover:text-[#FAFAFA] transition-colors duration-150" href="#contacto">[CONTACTO]</a>
+</nav>
+<!-- Language Switcher & CV Button -->
+<div class="flex items-center gap-4">
+<div class="flex items-center text-xs bg-[#121214] border border-[#27272A] px-2.5 py-1 rounded">
+<span class="text-[#EF4444] font-bold">ES</span>
+<span class="mx-1 text-[#52525B]">/</span>
+<span class="text-[#A1A1AA] cursor-pointer hover:text-[#FAFAFA] transition-colors">EN</span>
+</div>
+<a class="hidden sm:inline-block border border-[#EF4444]/60 text-[#EF4444] hover:bg-[#EF4444] hover:text-[#FFFFFF] px-3 py-1 font-mono text-xs uppercase tracking-widest transition-all duration-200" href="#contacto">
+          CV ↓
+        </a>
+</div>
+</div>
+</header>
+<!-- END: TopHeader -->
+<main class="pt-16">
+<!-- BEGIN: HeroSection -->
+<section class="relative border-b border-[#27272A] overflow-hidden pt-12 pb-16 lg:pb-24" id="hero">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Code Indicator -->
+<div class="font-mono text-xs text-[#A1A1AA] mb-8 tracking-widest uppercase flex items-center gap-2">
+<span>[ 00 ]</span>
+<span class="h-px w-6 bg-[#27272A]"></span>
+<span>DESARROLLADOR DE SOFTWARE &amp; DATA SYSTEMS</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-stretch">
+<!-- Left Main Hero Column -->
+<div class="lg:col-span-8 flex flex-col justify-between">
+<div>
+<!-- Hero Display Title -->
+<h1 class="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tighter uppercase font-display text-[#FAFAFA] leading-[0.92] mb-8">
+                ESTEBAN<br/>
+<span class="text-[#52525B] hover:text-[#FAFAFA] transition-colors duration-300">MERCADO</span>
+</h1>
+<!-- Core Statement Párrafo -->
+<p class="text-lg sm:text-xl text-[#A1A1AA] max-w-2xl font-light leading-relaxed border-l-2 border-[#EF4444] pl-4">
+                Desarrollador de software enfocado en construir sistemas prestando atención a cómo se estructuran los datos, cómo escalan las consultas en persistencia y cómo se resuelven problemas reales desde los fundamentos algorítmicos.
+              </p>
+</div>
+<!-- Quick Terminal Metrics -->
+<div class="mt-12 pt-8 border-t border-[#27272A] flex flex-wrap gap-8 text-xs font-mono text-[#A1A1AA]">
+<div>
+<span class="block text-[#71717A] uppercase tracking-wider mb-1">Especialidad</span>
+<span class="text-[#FAFAFA] font-medium">Backend &amp; Data Engineering</span>
+</div>
+<div>
+<span class="block text-[#71717A] uppercase tracking-wider mb-1">Enfoque</span>
+<span class="text-[#FAFAFA] font-medium">Escalabilidad &amp; Rendimiento</span>
+</div>
+<div>
+<span class="block text-[#71717A] uppercase tracking-wider mb-1">Grado</span>
+<span class="text-[#FAFAFA] font-medium">Ingeniería de Sistemas (Finalizando)</span>
+</div>
+</div>
+</div>
+<!-- Right Technical Spec Panel (Ficha técnica similar a Agustín Tabarcache) -->
+<div class="lg:col-span-4 flex flex-col justify-between bg-[#121214] border border-[#27272A]">
+<!-- Specs Header Table -->
+<div class="divide-y divide-[#27272A] text-xs font-mono">
+<div class="p-4">
+<span class="block text-[#A1A1AA] tracking-wider uppercase text-[10px] mb-1">ROL</span>
+<p class="font-bold text-[#FAFAFA] uppercase tracking-wider">BACKEND DEVELOPER &amp; DATA</p>
+</div>
+<div class="p-4">
+<span class="block text-[#A1A1AA] tracking-wider uppercase text-[10px] mb-1">UBICACIÓN</span>
+<p class="font-bold text-[#FAFAFA] uppercase tracking-wider">COLOMBIA (BOGOTÁ / REMOTO)</p>
+</div>
+<div class="p-4">
+<span class="block text-[#A1A1AA] tracking-wider uppercase text-[10px] mb-1">STACK PRINCIPAL</span>
+<p class="text-[#D4D4D8] font-medium leading-relaxed">
+                  NODE · TYPESCRIPT · PYTHON · SQL · POSTGRES · REACT
+                </p>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div>
+<span class="block text-[#A1A1AA] tracking-wider uppercase text-[10px] mb-1">HORA LOCAL</span>
+<p class="font-bold text-[#FAFAFA] text-sm" id="live-clock">11:45:00 UTC-5</p>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#EF4444] animate-pulse"></span>
+<span class="text-[10px] text-[#EF4444]">EN LÍNEA</span>
+</div>
+</div>
+</div>
+<!-- Solid Crimson Vermillion CTA Block -->
+<div class="bg-[#EF4444] text-[#FFFFFF] p-6 font-display font-black text-xl sm:text-2xl leading-none flex flex-col justify-between h-40 group cursor-pointer hover:bg-[#DC2626] transition-colors">
+<span class="text-xs font-mono tracking-widest uppercase font-bold text-[#FFFFFF]/80">ESTATUS LABORAL</span>
+<div class="flex items-end justify-between">
+<span class="tracking-tight uppercase">DISPONIBLE PARA TRABAJAR</span>
+<span class="text-2xl font-mono group-hover:translate-x-1 transition-transform">→</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: TickerMarquee -->
+<div class="border-b border-[#27272A] bg-[#0E0E10] py-3.5 overflow-hidden text-xs font-mono font-bold tracking-widest text-[#A1A1AA] uppercase selection:bg-[#EF4444] selection:text-[#FFFFFF]">
+<div class="animate-marquee whitespace-nowrap flex gap-8">
+<span>CONSTRUYENDO PRODUCTOS DIGITALES <span class="text-[#EF4444]">✱</span> DISPONIBLE PARA TRABAJAR <span class="text-[#EF4444]">✱</span> BACKEND &amp; DATA SYSTEMS <span class="text-[#EF4444]">✱</span> COLOMBIA · REMOTO <span class="text-[#EF4444]">✱</span> ALGORITMOS &amp; ESCALABILIDAD <span class="text-[#EF4444]">✱</span> SQL OPTIMIZATION &amp; APIS <span class="text-[#EF4444]">✱</span></span>
+<span>CONSTRUYENDO PRODUCTOS DIGITALES <span class="text-[#EF4444]">✱</span> DISPONIBLE PARA TRABAJAR <span class="text-[#EF4444]">✱</span> BACKEND &amp; DATA SYSTEMS <span class="text-[#EF4444]">✱</span> COLOMBIA · REMOTO <span class="text-[#EF4444]">✱</span> ALGORITMOS &amp; ESCALABILIDAD <span class="text-[#EF4444]">✱</span> SQL OPTIMIZATION &amp; APIS <span class="text-[#EF4444]">✱</span></span>
+</div>
+</div>
+<!-- END: TickerMarquee -->
+<!-- BEGIN: SobreMiSection -->
+<section class="py-24 border-b border-[#27272A]" id="sobre-mi">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Code Header -->
+<div class="font-mono text-xs text-[#A1A1AA] mb-12 tracking-widest uppercase flex items-center gap-2">
+<span>[ 01 ]</span>
+<span class="h-px w-6 bg-[#27272A]"></span>
+<span>SOBRE MÍ</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Technical ASCII / Photo Frame -->
+<div class="lg:col-span-5">
+<div class="relative bg-[#121214] border border-[#27272A] p-4 group">
+<!-- Frame Header Metas -->
+<div class="flex justify-between items-center text-[10px] font-mono text-[#A1A1AA] pb-3 border-b border-[#27272A] mb-4">
+<span>ESTEBAN_M.JPG</span>
+<span>©2026 // ID: DEV_084</span>
+</div>
+<!-- Stylized Developer Silhouette / Matrix Representation -->
+<div class="w-full aspect-[4/5] bg-[#0E0E10] border border-[#27272A] flex flex-col items-center justify-center p-6 relative overflow-hidden text-center">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(#EF4444_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<!-- Stylized Monospace Visual Element -->
+<div class="font-mono text-[11px] leading-tight text-[#EF4444]/80 font-light select-none mb-4">
+                  ░░░░░░░░░░░░░░░░░░░░░<br/>
+                  ░░░░░░█████████░░░░░░<br/>
+                  ░░░░█████████████░░░░<br/>
+                  ░░░████░░░░░░░████░░░<br/>
+                  ░░░██░░░░░░░░░░░██░░░<br/>
+                  ░░░███████████████░░░<br/>
+                  ░░░██░░░░░░░░░░░██░░░<br/>
+                  ░░░██░░░░░░░░░░░██░░░<br/>
+                  ░░░░█████████████░░░░<br/>
+                  ░░░░░░█████████░░░░░░<br/>
+                  ░░░░░░░░░░░░░░░░░░░░░
+                </div>
+<div class="relative z-10">
+<span class="inline-block px-2 py-0.5 bg-[#EF4444] text-[#FFFFFF] font-mono text-[10px] font-bold uppercase tracking-wider mb-2">
+                    SOFTWARE ENGINEER
+                  </span>
+<h3 class="text-[#FAFAFA] font-bold font-mono text-sm">Esteban Mercado Rachath</h3>
+<p class="text-xs text-[#A1A1AA] font-mono mt-1">Sistemas Computacionales &amp; Backend</p>
+</div>
+<!-- Footer stamp inside frame -->
+<div class="absolute bottom-2 left-3 right-3 flex justify-between text-[9px] font-mono text-[#71717A]">
+<span>LATENCY: &lt;12ms</span>
+<span>STATUS: READY</span>
+</div>
+</div>
+<!-- Extra Frame Sub-badge -->
+<div class="flex items-center justify-between mt-3 text-[11px] font-mono text-[#A1A1AA]">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-[#EF4444]"></span>
+<span>BOGOTÁ, COLOMBIA</span>
+</div>
+<span>SYS_ING</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Biography & Now Doing -->
+<div class="lg:col-span-7">
+<!-- Large Section Title -->
+<h2 class="text-3xl sm:text-5xl font-black text-[#FAFAFA] font-display tracking-tight leading-tight mb-8">
+              Construyo software <br/>
+<span class="text-[#52525B]">que la gente usa de verdad.</span>
+</h2>
+<!-- Currently Block // AHORA MISMO -->
+<div class="bg-[#121214] border-l-2 border-[#EF4444] p-5 mb-8 font-mono text-xs">
+<span class="text-[#A1A1AA] font-bold tracking-widest block mb-3">// AHORA MISMO</span>
+<ul class="space-y-2 text-[#D4D4D8]">
+<li class="flex items-start gap-2">
+<span class="text-[#EF4444]">→</span>
+<span>Finalizando carrera en Ingeniería de Sistemas con énfasis en ingeniería de software.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-[#EF4444]">→</span>
+<span>Diseñando APIs transaccionales y optimización de latencia en consultas PostgreSQL.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-[#EF4444]">→</span>
+<span>Estudiando algoritmos de grafos, balanceo de carga y estructuras de datos canónicas.</span>
+</li>
+</ul>
+</div>
+<!-- Descriptive Body Paragraphs -->
+<div class="space-y-5 text-sm sm:text-base text-[#A1A1AA] leading-relaxed">
+<p>
+                Soy estudiante de Ingeniería de Sistemas en etapa final con formación orientada al rigor técnico y arquitectura backend. Me interesa construir software entendiendo lo que ocurre debajo de la interfaz: cómo se estructuran los datos en almacenamiento, cómo escalan las consultas en bases de datos relacionales y cómo los algoritmos impactan directamente en la resiliencia de un sistema en producción.
+              </p>
+<p>
+                No concibo el desarrollo como un mero pegado de librerías, sino como la toma deliberada de decisiones de compromiso (<span class="text-[#FAFAFA] italic">trade-offs</span>) entre tiempo de cómputo, consumo de memoria y claridad arquitectónica para los equipos de ingeniería. Orientado a roles Junior en Software Development, Backend y Data Engineering.
+              </p>
+</div>
+<!-- Micro Skills Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8 pt-8 border-t border-[#27272A] text-xs font-mono">
+<div class="p-3 bg-[#121214] border border-[#27272A]">
+<span class="text-[#71717A] block mb-1">01 / ENFOQUE</span>
+<span class="text-[#FAFAFA] font-medium">Bases de datos &amp; Lógica</span>
+</div>
+<div class="p-3 bg-[#121214] border border-[#27272A]">
+<span class="text-[#71717A] block mb-1">02 / PRIORIDAD</span>
+<span class="text-[#FAFAFA] font-medium">Consistencia &amp; Robustez</span>
+</div>
+<div class="p-3 bg-[#121214] border border-[#27272A]">
+<span class="text-[#71717A] block mb-1">03 / METODOLOGÍA</span>
+<span class="text-[#FAFAFA] font-medium">Clean Code &amp; Testing</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SobreMiSection -->
+<!-- BEGIN: ProyectosSection (EXACT LAYOUT FROM IMAGE_4) -->
+<section class="py-24 border-b border-[#27272A]" id="proyectos">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header Bar: PROYECTOS / Soluciones reales / 03 / 03 -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#27272A]">
+<div>
+<div class="font-mono text-xs text-[#A1A1AA] tracking-widest uppercase mb-2">
+              [ 02 ] — CASOS DE ESTUDIO
+            </div>
+<h2 class="text-4xl sm:text-6xl font-black text-[#FAFAFA] font-display uppercase tracking-tight">
+              PROYECTOS
+            </h2>
+<p class="text-sm font-mono text-[#A1A1AA] mt-1">Soluciones reales &amp; Arquitectura comprobable</p>
+</div>
+<div class="mt-6 md:mt-0 flex items-baseline gap-2 font-mono">
+<span class="text-5xl font-black text-[#EF4444] leading-none">03</span>
+<span class="text-xl text-[#71717A] leading-none">/ 03</span>
+</div>
+</div>
+<!-- LISTA DE PROYECTOS (ESTRUCTURA IDÉNTICA A IMAGE_4) -->
+<div class="space-y-32">
+<!-- ================= PROJECT 01: RouteOptimizer ================= -->
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<!-- Left Column: Project Details (Layout exacto a IMAGE_4) -->
+<div class="lg:col-span-6 flex flex-col justify-between">
+<!-- Project Header Tag -->
+<span class="font-mono text-xs text-[#A1A1AA] tracking-widest uppercase mb-2">
+                PROJECT 01
+              </span>
+<!-- Project Title -->
+<h3 class="text-2xl sm:text-4xl font-bold text-[#FAFAFA] tracking-tight mb-2">
+                RouteOptimizer
+              </h3>
+<!-- Project Subtitle / Category -->
+<p class="font-mono text-xs sm:text-sm font-bold text-[#EF4444] uppercase tracking-wider mb-6">
+                ALGORITMOS &amp; DATA STRUCTURES · INGENIERÍA INDEPENDIENTE
+              </p>
+<!-- Description -->
+<p class="text-sm sm:text-base text-[#A1A1AA] leading-relaxed mb-8">
+                Motor algorítmico desacoplado con implementaciones canónicas de Dijkstra y A* soportado por un Binary Min-Heap propio. Resuelve el cálculo determinístico y visualización paso a paso de trayectos óptimos sobre grafos dirigidos ponderados.
+              </p>
+<!-- Metadata Table with thin horizontal borders -->
+<div class="border-t border-[#27272A] divide-y divide-[#27272A] text-xs font-mono mb-8">
+<div class="py-3 grid grid-cols-12">
+<span class="col-span-3 text-[#A1A1AA] uppercase tracking-wider">ROLE</span>
+<span class="col-span-9 text-[#D4D4D8]">Algorítmica · Motor de ejecución</span>
+</div>
+<div class="py-3 grid grid-cols-12">
+<span class="col-span-3 text-[#A1A1AA] uppercase tracking-wider">TECH</span>
+<span class="col-span-9 text-[#D4D4D8]">TypeScript · Graphs · Dijkstra · A* · Binary Min-Heap · Vitest</span>
+</div>
+<div class="py-3 grid grid-cols-12">
+<span class="col-span-3 text-[#A1A1AA] uppercase tracking-wider">YEAR</span>
+<span class="col-span-9 text-[#D4D4D8]">2026</span>
+</div>
+<div class="py-3 grid grid-cols-12">
+<span class="col-span-3 text-[#A1A1AA] uppercase tracking-wider">STATUS</span>
+<span class="col-span-9 text-[#F87171] font-medium">Completado / Open Source</span>
+</div>
+</div>
+<!-- Action Links -->
+<div class="flex items-center gap-8 text-xs font-mono font-bold tracking-wider">
+<a class="text-[#EF4444] hover:text-[#FAFAFA] transition-colors duration-150 flex items-center gap-1.5" href="#contacto">
+                  VIEW CASE STUDY <span class="text-sm">→</span>
+</a>
+<a class="text-[#F87171] hover:text-[#FAFAFA] transition-colors duration-150 flex items-center gap-1.5" href="https://github.com" rel="noopener noreferrer" target="_blank">
+                  CODE REPO <span class="text-sm">↗</span>
+</a>
+</div>
+</div>
+<!-- Right Column: Project Image Preview Frame -->
+<div class="lg:col-span-6">
+<div class="relative group rounded bg-[#121214] border border-[#27272A] overflow-hidden aspect-[16/10] flex items-center justify-center">
+<!-- Visual Graph Interface Mockup -->
+<div class="w-full h-full p-4 flex flex-col justify-between bg-[#0E0E10] font-mono text-xs">
+<!-- Simulated Top Navigation Bar -->
+<div class="flex items-center justify-between pb-2 border-b border-[#27272A] text-[10px] text-[#A1A1AA]">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-red-500/80"></span>
+<span class="w-2 h-2 rounded-full bg-yellow-500/80"></span>
+<span class="w-2 h-2 rounded-full bg-green-500/80"></span>
+<span class="ml-2 text-[#FAFAFA] font-semibold">GraphTopology.engine</span>
+</div>
+<span class="text-[#EF4444]">MIN_HEAP_SIZE: 1,024 NODES</span>
+</div>
+<!-- Central Algorithmic Canvas Mockup -->
+<div class="relative flex-1 my-2 flex items-center justify-center overflow-hidden">
+<svg class="w-full h-full max-h-56 opacity-80" fill="none" viewbox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+<!-- Grid lines -->
+<line stroke="#27272A" stroke-dasharray="3 3" x1="0" x2="400" y1="50" y2="50"></line>
+<line stroke="#27272A" stroke-dasharray="3 3" x1="0" x2="400" y1="100" y2="100"></line>
+<line stroke="#27272A" stroke-dasharray="3 3" x1="0" x2="400" y1="150" y2="150"></line>
+<!-- Nodes & Connectors -->
+<path d="M 60 100 L 130 50 L 220 70 L 290 140 L 350 100" stroke="#38bdf8" stroke-width="2.5"></path>
+<path d="M 60 100 L 140 150 L 220 70" stroke="#EF4444" stroke-dasharray="4 2" stroke-width="1.5"></path>
+<circle cx="60" cy="100" fill="#38bdf8" r="8"></circle>
+<circle cx="130" cy="50" fill="#38bdf8" r="7"></circle>
+<circle cx="140" cy="150" fill="#EF4444" r="6"></circle>
+<circle cx="220" cy="70" fill="#38bdf8" r="7"></circle>
+<circle cx="290" cy="140" fill="#38bdf8" r="7"></circle>
+<circle cx="350" cy="100" fill="#F87171" r="9"></circle>
+</svg>
+<div class="absolute bottom-2 left-2 text-[10px] bg-black/60 px-2 py-1 border border-[#EF4444]/40 text-[#EF4444] rounded">
+                      Shortest Path: Cost 14.82ms
+                    </div>
+</div>
+<!-- Simulated Bottom Toolbar -->
+<div class="pt-2 border-t border-[#27272A] flex justify-between text-[10px] text-[#A1A1AA]">
+<span>Dijkstra + Priority Queue (Min-Heap)</span>
+<span class="text-[#F87171]">Deterministic · O(E + V log V)</span>
+</div>
+</div>
+<!-- Hover Overlay Badge (View Case Study) -->
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center pointer-events-none">
+<span class="bg-[#0A0A0B]/90 border border-[#EF4444]/30 text-[#FAFAFA] px-4 py-2 text-xs font-mono tracking-widest uppercase">
+                    VIEW CASE STUDY →
+                  </span>
+</div>
+</div>
+</div>
+</article>
+<!-- ================= PROJECT 02: SalesFlow CRM API ================= -->
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<!-- Left Column: Project Details -->
+<div class="lg:col-span-6 flex flex-col justify-between">
+<!-- Project Header Tag -->
+<span class="font-mono text-xs text-[#A1A1AA] tracking-widest uppercase mb-2">
+                PROJECT 02
+              </span>
+<!-- Project Title -->
+<h3 class="text-2xl sm:text-4xl font-bold text-[#FAFAFA] tracking-tight mb-2">
+                SalesFlow CRM API
+              </h3>
+<!-- Project Subtitle / Category -->
+<p class="font-mono text-xs sm:text-sm font-bold text-[#EF4444] uppercase tracking-wider mb-6">
+                BACKEND DEVELOPER · ARQUITECTURA DISTRIBUIDA
+              </p>
+<!-- Description -->
+<p class="text-sm sm:text-base text-[#A1A1AA] leading-relaxed mb-8">
+                Backend comercial transaccional con pipelines de ventas concurrentes, control RBAC granular, validación de esquemas Zod en tiempo de ejecución y transacciones aisladas para garantizar consistencia contable en embudos de venta.
+              </p>
+<!-- Metadata Table with thin horizontal borders -->
+<div class="border-t border-[#27272A] divide-y divide-[#27272A] text-xs font-mono mb-8">
+<div class="py-3 grid grid-cols-12">
+<span class="col-span-3 text-[#A1A1AA] uppercase tracking-wider">ROLE</span>
+<span class="col-span-9 text-[#D4D4D8]">Arquitectura Backend · API REST</span>
+</div>
+<div class="py-3 grid grid-cols-12">
+<span class="col-span-3 text-[#A1A1AA] uppercase tracking-wider">TECH</span>
+<span class="col-span-9 text-[#D4D4D8]">Node.js · Express · PostgreSQL · Prisma ORM · Docker · JWT</span>
+</div>
+<div class="py-3 grid grid-cols-12">
+<span class="col-span-3 text-[#A1A1AA] uppercase tracking-wider">YEAR</span>
+<span class="col-span-9 text-[#D4D4D8]">2025 — 2026</span>
+</div>
+<div class="py-3 grid grid-cols-12">
+<span class="col-span-3 text-[#A1A1AA] uppercase tracking-wider">STATUS</span>
+<span class="col-span-9 text-[#F87171] font-medium">Production Ready</span>
+</div>
+</div>
+<!-- Action Links -->
+<div class="flex items-center gap-8 text-xs font-mono font-bold tracking-wider">
+<a class="text-[#EF4444] hover:text-[#FAFAFA] transition-colors duration-150 flex items-center gap-1.5" href="#contacto">
+                  VIEW CASE STUDY <span class="text-sm">→</span>
+</a>
+<a class="text-[#F87171] hover:text-[#FAFAFA] transition-colors duration-150 flex items-center gap-1.5" href="https://github.com" rel="noopener noreferrer" target="_blank">
+                  DOCS &amp; SWAGGER <span class="text-sm">↗</span>
+</a>
+</div>
+</div>
+<!-- Right Column: Project Image Preview Frame -->
+<div class="lg:col-span-6">
+<div class="relative group rounded bg-[#121214] border border-[#27272A] overflow-hidden aspect-[16/10] flex items-center justify-center">
+<!-- Visual API Endpoint/Database Schema Mockup -->
+<div class="w-full h-full p-4 flex flex-col justify-between bg-[#0E0E10] font-mono text-xs">
+<!-- Simulated Top Bar -->
+<div class="flex items-center justify-between pb-2 border-b border-[#27272A] text-[10px]">
+<span class="text-[#A1A1AA] font-mono">POSTGRESQL // RESTful Transaction Engine</span>
+<span class="px-2 py-0.5 bg-[#27181A] text-[#F87171] border border-[#441C24] rounded">ACID ISOLATION</span>
+</div>
+<!-- API Schema Tree Graphic -->
+<div class="my-2 space-y-2 font-mono text-[11px]">
+<div class="flex items-center justify-between bg-[#121214] p-2 border border-[#27272A] rounded">
+<span class="text-purple-400">POST</span>
+<span class="text-[#D4D4D8]">/api/v1/deals/:id/stage-transition</span>
+<span class="text-[#F87171]">200 OK (18ms)</span>
+</div>
+<div class="flex items-center justify-between bg-[#121214] p-2 border border-[#27272A] rounded">
+<span class="text-blue-400">GET</span>
+<span class="text-[#D4D4D8]">/api/v1/analytics/pipeline-velocity</span>
+<span class="text-[#F87171]">200 OK (32ms)</span>
+</div>
+<div class="p-2.5 bg-[#121214] border border-[#27272A] text-[10px] text-[#A1A1AA] rounded font-mono">
+<span class="text-[#EF4444]">BEGIN TRANSACTION;</span><br/>
+                      SELECT * FROM sales_deals WHERE id = $1 FOR UPDATE;<br/>
+                      UPDATE sales_deals SET stage = 'WON', closed_at = NOW();<br/>
+<span class="text-[#EF4444]">COMMIT;</span>
+</div>
+</div>
+<!-- Footer Metas -->
+<div class="pt-2 border-t border-[#27272A] flex justify-between text-[10px] text-[#A1A1AA]">
+<span>Prisma Migrations · Dockerized</span>
+<span>Role-Based Access Control</span>
+</div>
+</div>
+<!-- Hover Overlay Badge -->
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center pointer-events-none">
+<span class="bg-[#0A0A0B]/90 border border-[#EF4444]/30 text-[#FAFAFA] px-4 py-2 text-xs font-mono tracking-widest uppercase">
+                    VIEW CASE STUDY →
+                  </span>
+</div>
+</div>
+</div>
+</article>
+<!-- ================= PROJECT 03: Base Electoral ================= -->
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<!-- Left Column: Project Details -->
+<div class="lg:col-span-6 flex flex-col justify-between">
+<!-- Project Header Tag -->
+<span class="font-mono text-xs text-[#A1A1AA] tracking-widest uppercase mb-2">
+                PROJECT 03
+              </span>
+<!-- Project Title -->
+<h3 class="text-2xl sm:text-4xl font-bold text-[#FAFAFA] tracking-tight mb-2">
+                Base Electoral
+              </h3>
+<!-- Project Subtitle / Category -->
+<p class="font-mono text-xs sm:text-sm font-bold text-[#EF4444] uppercase tracking-wider mb-6">
+                DATA PERFORMANCE · FRONTEND SYSTEMS
+              </p>
+<!-- Description -->
+<p class="text-sm sm:text-base text-[#A1A1AA] leading-relaxed mb-8">
+                Plataforma optimizada con Data Access Layer (DAL) que encapsula Firebase y sustituye lecturas masivas por paginación basada en cursor ordenado. Delegación del cálculo de cruces estadísticos y exportación XLSX a Web Workers dedicados para mantener 60 FPS ininterrumpidos.
+              </p>
+<!-- Metadata Table with thin horizontal borders -->
+<div class="border-t border-[#27272A] divide-y divide-[#27272A] text-xs font-mono mb-8">
+<div class="py-3 grid grid-cols-12">
+<span class="col-span-3 text-[#A1A1AA] uppercase tracking-wider">ROLE</span>
+<span class="col-span-9 text-[#D4D4D8]">Fullstack · Rendimiento de Datos</span>
+</div>
+<div class="py-3 grid grid-cols-12">
+<span class="col-span-3 text-[#A1A1AA] uppercase tracking-wider">TECH</span>
+<span class="col-span-9 text-[#D4D4D8]">React · Tailwind CSS · Firebase RTDB · Web Workers · XLSX</span>
+</div>
+<div class="py-3 grid grid-cols-12">
+<span class="col-span-3 text-[#A1A1AA] uppercase tracking-wider">YEAR</span>
+<span class="col-span-9 text-[#D4D4D8]">2025</span>
+</div>
+<div class="py-3 grid grid-cols-12">
+<span class="col-span-3 text-[#A1A1AA] uppercase tracking-wider">STATUS</span>
+<span class="col-span-9 text-[#F87171] font-medium">Live Deployment</span>
+</div>
+</div>
+<!-- Action Links -->
+<div class="flex items-center gap-8 text-xs font-mono font-bold tracking-wider">
+<a class="text-[#EF4444] hover:text-[#FAFAFA] transition-colors duration-150 flex items-center gap-1.5" href="#contacto">
+                  VIEW CASE STUDY <span class="text-sm">→</span>
+</a>
+<a class="text-[#F87171] hover:text-[#FAFAFA] transition-colors duration-150 flex items-center gap-1.5" href="#contacto">
+                  LIVE SITE <span class="text-sm">↗</span>
+</a>
+</div>
+</div>
+<!-- Right Column: Project Image Preview Frame -->
+<div class="lg:col-span-6">
+<div class="relative group rounded bg-[#121214] border border-[#27272A] overflow-hidden aspect-[16/10] flex items-center justify-center">
+<!-- Visual Data Dashboard Simulation Mockup -->
+<div class="w-full h-full p-4 flex flex-col justify-between bg-[#0E0E10] font-mono text-xs">
+<!-- Simulated Header -->
+<div class="flex items-center justify-between pb-2 border-b border-[#27272A] text-[10px]">
+<span class="text-[#A1A1AA]">ELECTORAL_ANALYTICS_PLATFORM</span>
+<span class="text-[#F87171] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#F87171]"></span> 60 FPS CONSTANT
+                    </span>
+</div>
+<!-- Mock Statistics & Progress bars -->
+<div class="space-y-3 my-2">
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-[#121214] p-2 border border-[#27272A] rounded">
+<span class="text-[9px] text-[#A1A1AA] block">DATA RECORDS</span>
+<span class="text-sm font-bold text-[#FAFAFA]">142,800+</span>
+</div>
+<div class="bg-[#121214] p-2 border border-[#27272A] rounded">
+<span class="text-[9px] text-[#A1A1AA] block">CURSOR LATENCY</span>
+<span class="text-sm font-bold text-[#EF4444]">&lt; 24ms</span>
+</div>
+<div class="bg-[#121214] p-2 border border-[#27272A] rounded">
+<span class="text-[9px] text-[#A1A1AA] block">WORKER THREAD</span>
+<span class="text-sm font-bold text-[#F87171]">Active</span>
+</div>
+</div>
+<!-- Bars graphic -->
+<div class="bg-[#121214] p-2.5 border border-[#27272A] rounded space-y-1.5">
+<div class="flex justify-between text-[10px] text-[#A1A1AA]">
+<span>Heap Memory Consumption</span>
+<span>18.4 MB / 128 MB</span>
+</div>
+<div class="w-full h-1.5 bg-[#27272A] rounded-full overflow-hidden">
+<div class="h-full bg-[#EF4444] w-1/4"></div>
+</div>
+</div>
+</div>
+<!-- Footer Metas -->
+<div class="pt-2 border-t border-[#27272A] flex justify-between text-[10px] text-[#A1A1AA]">
+<span>Offloaded Heavy Tasks to Web Worker</span>
+<span>Zero Main Thread Jitter</span>
+</div>
+</div>
+<!-- Hover Overlay Badge -->
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center pointer-events-none">
+<span class="bg-[#0A0A0B]/90 border border-[#EF4444]/30 text-[#FAFAFA] px-4 py-2 text-xs font-mono tracking-widest uppercase">
+                    VIEW CASE STUDY →
+                  </span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- END: ProyectosSection -->
+<!-- BEGIN: StackHerramientasSection -->
+<section class="py-24 border-b border-[#27272A] bg-[#0E0E10]" id="stack">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Code Header & Main Title (Exacto a Agustín Tabarcache) -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+<div class="font-mono text-xs text-[#A1A1AA] tracking-widest uppercase flex items-center gap-2">
+<span>[ 03 ]</span>
+<span class="h-px w-6 bg-[#27272A]"></span>
+<span>STACK &amp; HERRAMIENTAS</span>
+</div>
+<h2 class="text-4xl sm:text-6xl font-black text-[#FAFAFA] font-display uppercase tracking-tight mt-4 md:mt-0">
+            LO QUE USO
+          </h2>
+</div>
+<!-- Grid Layout matching Tabarcache reference -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Filter list -->
+<div class="lg:col-span-4 space-y-6">
+<div class="border-y border-[#27272A] divide-y divide-[#27272A] font-mono text-xs">
+<div class="py-3 flex justify-between items-center text-[#FAFAFA] hover:text-[#EF4444] cursor-pointer transition-colors">
+<span>01 FRONTEND</span>
+<span class="text-[#A1A1AA]">(05)</span>
+</div>
+<div class="py-3 flex justify-between items-center text-[#FAFAFA] hover:text-[#EF4444] cursor-pointer transition-colors">
+<span>02 BACKEND</span>
+<span class="text-[#A1A1AA]">(06)</span>
+</div>
+<div class="py-3 flex justify-between items-center text-[#FAFAFA] hover:text-[#EF4444] cursor-pointer transition-colors">
+<span>03 DATOS &amp; SQL</span>
+<span class="text-[#A1A1AA]">(05)</span>
+</div>
+<div class="py-3 flex justify-between items-center text-[#FAFAFA] hover:text-[#EF4444] cursor-pointer transition-colors">
+<span>04 TOOLING &amp; SYSTEMS</span>
+<span class="text-[#A1A1AA]">(04)</span>
+</div>
+</div>
+<!-- Descriptive Helper Text -->
+<p class="text-xs font-mono text-[#A1A1AA] leading-relaxed">
+              → Pasá el cursor por una categoría para aislarla, o por una tecnología para ver su rol en mi arquitectura de software.
+            </p>
+</div>
+<!-- Right Column: Asymmetric Organic Typographic Cloud (Exact composition from IMAGE_24) -->
+<div class="lg:col-span-8 flex flex-wrap items-baseline gap-x-6 gap-y-4 font-sans select-none">
+<span class="text-4xl sm:text-5xl font-bold text-[#FAFAFA] hover:text-[#EF4444] transition-colors cursor-default">TypeScript</span>
+<span class="text-2xl sm:text-3xl text-[#A1A1AA] hover:text-[#FAFAFA] transition-colors cursor-default">Node.js</span>
+<span class="text-4xl sm:text-6xl font-black text-[#FAFAFA] hover:text-[#EF4444] transition-colors cursor-default">PostgreSQL</span>
+<span class="text-xl sm:text-2xl text-[#A1A1AA] hover:text-[#FAFAFA] transition-colors cursor-default">REST APIs</span>
+<span class="text-3xl sm:text-4xl font-semibold text-[#FAFAFA] hover:text-[#EF4444] transition-colors cursor-default">Python</span>
+<span class="text-2xl text-[#D4D4D8] hover:text-[#FAFAFA] transition-colors cursor-default">Prisma ORM</span>
+<span class="text-4xl sm:text-5xl font-extrabold text-[#FAFAFA] hover:text-[#EF4444] transition-colors cursor-default">Express</span>
+<span class="text-2xl text-[#A1A1AA] hover:text-[#FAFAFA] transition-colors cursor-default">Pandas</span>
+<span class="text-3xl sm:text-4xl font-bold text-[#FAFAFA] hover:text-[#EF4444] transition-colors cursor-default">Docker</span>
+<span class="text-xl text-[#71717A] hover:text-[#FAFAFA] transition-colors cursor-default">Git &amp; CI/CD</span>
+<span class="text-3xl sm:text-5xl font-bold text-[#FAFAFA] hover:text-[#EF4444] transition-colors cursor-default">React</span>
+<span class="text-lg text-[#A1A1AA] hover:text-[#FAFAFA] transition-colors cursor-default">Tailwind CSS</span>
+<span class="text-2xl sm:text-3xl font-medium text-[#FAFAFA] hover:text-[#EF4444] transition-colors cursor-default">SQL Query Opt</span>
+<span class="text-2xl text-[#D4D4D8] hover:text-[#FAFAFA] transition-colors cursor-default">Dijkstra &amp; A*</span>
+<span class="text-xl text-[#A1A1AA] hover:text-[#FAFAFA] transition-colors cursor-default">Binary Heaps</span>
+<span class="text-2xl sm:text-3xl font-bold text-[#FAFAFA] hover:text-[#EF4444] transition-colors cursor-default">NumPy</span>
+<span class="text-xl text-[#A1A1AA] hover:text-[#FAFAFA] transition-colors cursor-default">Power BI</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: StackHerramientasSection -->
+<!-- BEGIN: FormacionAprendizajeSection -->
+<section class="py-24 border-b border-[#27272A]" id="educacion">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Code Header & Title -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+<div class="font-mono text-xs text-[#A1A1AA] tracking-widest uppercase flex items-center gap-2">
+<span>[ 04 ]</span>
+<span class="h-px w-6 bg-[#27272A]"></span>
+<span>FORMACIÓN &amp; CERTIFICACIONES</span>
+</div>
+<h2 class="text-4xl sm:text-6xl font-black text-[#FAFAFA] font-display uppercase tracking-tight mt-4 md:mt-0">
+            APRENDIZAJE
+          </h2>
+</div>
+<!-- Academic & Technical Table (Similar a Agustín) -->
+<div class="divide-y divide-[#27272A] border-y border-[#27272A] font-mono text-xs">
+<!-- Item 01 -->
+<div class="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center group hover:bg-[#121214] transition-colors px-2">
+<div class="md:col-span-1 text-[#A1A1AA] group-hover:text-[#EF4444] transition-colors">01</div>
+<div class="md:col-span-7">
+<h3 class="text-[#FAFAFA] text-sm sm:text-base font-bold font-sans">Grado en Ingeniería de Sistemas</h3>
+<p class="text-[#A1A1AA] text-xs font-mono mt-0.5">Universidad · Enfoque en Ciencias de la Computación y Arquitectura Backend</p>
+</div>
+<div class="md:col-span-4 md:text-right text-[#A1A1AA]">
+<span>2020 — 2026 (Etapa de Graduación)</span>
+</div>
+</div>
+<!-- Item 02 -->
+<div class="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center group hover:bg-[#121214] transition-colors px-2">
+<div class="md:col-span-1 text-[#A1A1AA] group-hover:text-[#EF4444] transition-colors">02</div>
+<div class="md:col-span-7">
+<h3 class="text-[#FAFAFA] text-sm sm:text-base font-bold font-sans">Backend Architecture &amp; Relational Databases</h3>
+<p class="text-[#A1A1AA] text-xs font-mono mt-0.5">Especialización Práctica · Microservicios, Transacciones ACID e Indexación</p>
+</div>
+<div class="md:col-span-4 md:text-right text-[#A1A1AA]">
+<span>2025</span>
+</div>
+</div>
+<!-- Item 03 -->
+<div class="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center group hover:bg-[#121214] transition-colors px-2">
+<div class="md:col-span-1 text-[#A1A1AA] group-hover:text-[#EF4444] transition-colors">03</div>
+<div class="md:col-span-7">
+<h3 class="text-[#FAFAFA] text-sm sm:text-base font-bold font-sans">Data Structures &amp; Canonical Algorithms</h3>
+<p class="text-[#A1A1AA] text-xs font-mono mt-0.5">Grafos Dirigidos, Árboles de Búsqueda, Min/Max-Heaps &amp; Notación Asintótica</p>
+</div>
+<div class="md:col-span-4 md:text-right text-[#A1A1AA]">
+<span>2025</span>
+</div>
+</div>
+<!-- Item 04 -->
+<div class="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center group hover:bg-[#121214] transition-colors px-2">
+<div class="md:col-span-1 text-[#A1A1AA] group-hover:text-[#EF4444] transition-colors">04</div>
+<div class="md:col-span-7">
+<h3 class="text-[#FAFAFA] text-sm sm:text-base font-bold font-sans">Inglés Técnico Profesional (B2)</h3>
+<p class="text-[#A1A1AA] text-xs font-mono mt-0.5">Lectura fluida de RFCs, especificaciones de protocolos y documentación de arquitectura</p>
+</div>
+<div class="md:col-span-4 md:text-right text-[#A1A1AA]">
+<span>2025</span>
+</div>
+</div>
+<!-- Item 05 -->
+<div class="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center group hover:bg-[#121214] transition-colors px-2">
+<div class="md:col-span-1 text-[#A1A1AA] group-hover:text-[#EF4444] transition-colors">05</div>
+<div class="md:col-span-7">
+<h3 class="text-[#FAFAFA] text-sm sm:text-base font-bold font-sans">Modelado Relacional &amp; Optimización SQL</h3>
+<p class="text-[#A1A1AA] text-xs font-mono mt-0.5">PostgreSQL · Plan de ejecución (EXPLAIN ANALYZE), índices B-Tree y normalización</p>
+</div>
+<div class="md:col-span-4 md:text-right text-[#A1A1AA]">
+<span>2024</span>
+</div>
+</div>
+<!-- Item 06 -->
+<div class="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center group hover:bg-[#121214] transition-colors px-2">
+<div class="md:col-span-1 text-[#A1A1AA] group-hover:text-[#EF4444] transition-colors">06</div>
+<div class="md:col-span-7">
+<h3 class="text-[#FAFAFA] text-sm sm:text-base font-bold font-sans">Git, Docker &amp; Pipelines de Integración Continua</h3>
+<p class="text-[#A1A1AA] text-xs font-mono mt-0.5">Contenerización multi-stage, branching determinístico y flujos de automatización</p>
+</div>
+<div class="md:col-span-4 md:text-right text-[#A1A1AA]">
+<span>2024</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: FormacionAprendizajeSection -->
+<!-- BEGIN: FooterContactoSection -->
+<footer class="pt-24 pb-12 bg-[#080809]" id="contacto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Code Header -->
+<div class="font-mono text-xs text-[#A1A1AA] mb-8 tracking-widest uppercase flex items-center gap-2">
+<span>[ 05 ]</span>
+<span class="h-px w-6 bg-[#27272A]"></span>
+<span>CONTACTO</span>
+</div>
+<!-- Monumental Title: HABLE[MOS] with Crimson Vermillion box over 'MOS' -->
+<div class="mb-16">
+<div class="inline-flex items-center text-6xl sm:text-8xl md:text-9xl lg:text-[10.5rem] font-black uppercase tracking-tighter leading-none font-display">
+<span class="text-[#FAFAFA]">HABLE</span>
+<span class="bg-[#EF4444] text-[#FFFFFF] px-2 sm:px-4 ml-1">MOS</span>
+</div>
+</div>
+<!-- Contact Columns (Exact composition from Agustín Tabarcache) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-16 border-b border-[#27272A] text-xs font-mono">
+<!-- Column 1: Escribime -->
+<div>
+<span class="text-[#A1A1AA] block uppercase tracking-wider mb-2">ESCRIBIME</span>
+<div class="flex items-center gap-2">
+<a class="text-sm text-[#FAFAFA] hover:text-[#EF4444] transition-colors duration-200 font-medium" href="mailto:esteban.mercado.r@gmail.com">
+                esteban.mercado.r@gmail.com
+              </a>
+</div>
+<button class="mt-2 text-[11px] text-[#A1A1AA] hover:text-[#FAFAFA] flex items-center gap-1" onclick="navigator.clipboard.writeText('esteban.mercado.r@gmail.com'); alert('¡Email copiado al portapapeles!');">
+              [ Copiar dirección ]
+            </button>
+</div>
+<!-- Column 2: Redes -->
+<div>
+<span class="text-[#A1A1AA] block uppercase tracking-wider mb-2">REDES</span>
+<div class="space-y-1.5">
+<div>
+<a class="text-[#FAFAFA] hover:text-[#EF4444] transition-colors duration-150 inline-flex items-center gap-1" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+                  LinkedIn <span class="text-[10px]">↗</span>
+</a>
+</div>
+<div>
+<a class="text-[#FAFAFA] hover:text-[#EF4444] transition-colors duration-150 inline-flex items-center gap-1" href="https://github.com" rel="noopener noreferrer" target="_blank">
+                  GitHub <span class="text-[10px]">↗</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Column 3: Estado -->
+<div>
+<span class="text-[#A1A1AA] block uppercase tracking-wider mb-2">ESTADO</span>
+<p class="text-[#FAFAFA] font-medium">
+              Disponible — Colombia / Remoto
+            </p>
+<p class="text-[#A1A1AA] mt-1">
+              Hora local: <span class="text-[#EF4444]">11:45 UTC-5</span>
+</p>
+</div>
+</div>
+<!-- Sub-Footer / Copyright & Credits -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-[#A1A1AA] gap-4">
+<div>
+            © 2026 ESTEBAN MERCADO RACHATH · DISEÑADO &amp; CONSTRUIDO CON CRITERIO
+          </div>
+<div class="flex items-center gap-6">
+<span class="text-[#71717A]">BOGOTÁ / REMOTO</span>
+<a class="hover:text-[#FAFAFA] text-[#EF4444] transition-colors" href="#hero">↑ SUBIR</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: FooterContactoSection -->
+</main>
+<!-- Live Clock Script -->
+<script data-purpose="live-clock">
+    function updateClock() {
+      const clockElement = document.getElementById('live-clock');
+      if (!clockElement) return;
+      
+      const now = new Date();
+      // Format Bogotá/Colombia UTC-5 time
+      const options = {
+        timeZone: 'America/Bogota',
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      };
+      
+      const timeString = new Intl.DateTimeFormat('es-CO', options).format(now);
+      clockElement.textContent = timeString + ' UTC-5';
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+</body></html>
