@@ -179,10 +179,6 @@ body {
   animation-play-state: paused;
 }
 
-/* Keep section navigation scrollable without a visible browser gutter. */
-html { scrollbar-width: none; }
-html::-webkit-scrollbar { display: none; }
-
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
